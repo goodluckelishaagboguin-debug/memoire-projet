@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GéMémoire - Gestion Électronique de Mémoire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>📚 GéMémoire</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#documents">Documents</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#profil">Profil</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Section Accueil -->
+        <section id="accueil" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Bienvenue dans GéMémoire</h2>
+                    <p>Gérez vos mémoires académiques de manière simple, rapide et sécurisée</p>
+                    <button class="btn btn-primary" onclick="goToSection('documents')">Commencer</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Documents -->
+        <section id="documents" class="section">
+            <div class="container">
+                <h2>Mes Documents</h2>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Rechercher un document...">
+                    <button class="btn btn-secondary">🔍</button>
+                </div>
+                <div class="documents-grid" id="documentsGrid">
+                    <div class="document-card">
+                        <div class="document-header">
+                            <span class="doc-icon">📄</span>
+                            <span class="doc-date">03/07/2026</span>
+                        </div>
+                        <h3>Mémoire 2026</h3>
+                        <p>Intelligence Artificielle</p>
+                        <div class="document-actions">
+                            <button class="btn btn-small">✏️ Éditer</button>
+                            <button class="btn btn-small">⬇️ Télécharger</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="openUploadModal()">➕ Ajouter un document</button>
+            </div>
+        </section>
+
+        <!-- Section Projets -->
+        <section id="projets" class="section">
+            <div class="container">
+                <h2>Mes Projets</h2>
+                <div class="projects-grid" id="projectsGrid">
+                    <div class="project-card">
+                        <h3>Projet IA</h3>
+                        <p>Développement d'une plateforme IA</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <span class="progress-text">65% complété</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="openProjectModal()">➕ Nouveau projet</button>
+            </div>
+        </section>
+
+        <!-- Section Profil -->
+        <section id="profil" class="section">
+            <div class="container">
+                <h2>Mon Profil</h2>
+                <div class="profile-card">
+                    <div class="profile-avatar">👤</div>
+                    <div class="profile-info">
+                        <h3 id="userName">Utilisateur</h3>
+                        <p id="userEmail">email@example.com</p>
+                        <button class="btn btn-secondary">Modifier le profil</button>
+                    </div>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Documents</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Projets</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8.5 MB</span>
+                        <span class="stat-label">Stockage utilisé</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 GéMémoire. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="#conditions">Conditions d'utilisation</a>
+                <a href="#confidentialite">Confidentialité</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Upload -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUploadModal()">&times;</span>
+            <h2>Ajouter un document</h2>
+            <form id="uploadForm">
+                <input type="text" placeholder="Titre du document" required>
+                <textarea placeholder="Description..." required></textarea>
+                <input type="file" accept=".pdf,.docx,.doc" required>
+                <button type="submit" class="btn btn-primary">Télécharger</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
